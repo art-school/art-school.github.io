@@ -1,0 +1,182 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+
+// Our variables
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+$as-red:           rgb(254, 0, 0);
+
+$pink-color:       #fbf3ed;
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+$pad:              20px;
+
+
+
+
+// Using media queries with like this:
+// @include media-query($palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting"
+;
+
+.grid {
+  background: white;
+  margin: 0 0 $pad 0;
+
+  &:after {
+    /* Or @extend clearfix */
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+[class*='col-'] {
+	float: left;
+  padding-right: $pad;
+  .grid &:last-of-type {
+  	padding-right: 0;
+  }
+}
+.col-2-3 {
+	width: 66.66%;
+}
+.col-1-3 {
+	width: 33.33%;
+}
+.col-1-2 {
+	width: 50%;
+}
+.col-1-4 {
+	width: 25%;
+}
+.col-1-8 {
+	width: 12.5%;
+}
+
+.module {
+  padding: $pad;
+  background: #eee;
+}
+
+/* Opt-in outside padding */
+.grid-pad {
+  padding: $pad 0 $pad $pad;
+  [class*='col-']:last-of-type {
+    padding-right: $pad;
+  }
+}
+
+body {
+  font-family: "Raisonne Demibold", 'Century Gothic', Verdana, sans-serif;
+  font-size-adjust: 0.5;
+  font-weight: 600;
+  font-style: normal;
+}
+h1 {
+  color: white;
+  em {
+  	color: #666;
+    font-size: 16px;
+  }
+}
+
+
+
+
+#intro {
+  background: $pink-color;
+  margin: 0 auto;
+  width: 100%;
+  color: $as-red;
+}
+
+.center {
+	text-align: center;
+}
+
+.center {
+  img {
+  display: inline-block;
+  padding: 0 20px;
+  }
+}
+
+.pad-top {
+  padding-top: 50px;
+}
+
+section {
+
+  .grid {
+
+    .center{
+      padding: 0 20px;
+      max-width: 870px;
+    }
+  }
+}
+
+.center-read {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.spacer-top {
+  padding-top: 100px;
+}
+
+.spacer-bottom {
+  padding-bottom: 100px;
+}
+
+.spacers {
+  padding: 100px 0;
+}
+
+.underlined {
+  border-bottom: 8px solid $as-red;
+  padding-top: 93px;
+  display: block;
+  margin:0 auto;
+  width:93px;
+
+}
+
+p.intro {
+  
+}
