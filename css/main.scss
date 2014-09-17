@@ -159,7 +159,7 @@ h1 {
 }
 
 .centered-images {
-        width:180px;
+        width:234px;
         height:180px;
     img {
     display: inline-block;
@@ -261,6 +261,11 @@ h1 {
 }
 
 ul {
+  margin: 0 auto;
+  list-style: none;
+}
+
+.skinny ul {
     margin:0px 0;
     padding:0;
     list-style: inside none;
